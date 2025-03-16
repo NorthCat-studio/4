@@ -1,30 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-   
+document.addEventListener("DOMContentLoaded", function() {
+    const settingsPanel = document.getElementById("settingsPanel");
+    const settingsButton = document.querySelector(".settings-btn");
 
-  
-
-    Object.keys(navLinks).forEach(key => {
-        navLinks[key].addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection(key);
-        });
-    });
-
-    function showSection(sectionId) {
-        Object.keys(sections).forEach(key => {
-            if (sections[key]) {
-                sections[key].style.display = 'none';
-            }
-        });
-        sections[sectionId].style.display = 'block';
+    function toggleSettings() {
+        settingsPanel.classList.toggle("active");
     }
 
-    showSection('home'); // Initially display the home section
+    function toggleTheme() {
+        document.body.classList.toggle("light-theme");
+    }
 
     
 
-   
-    
-        });
-    }
+    settingsButton.addEventListener("click", toggleSettings);
 });
+
+function toggleSettings() {
+    let panel = document.querySelector(".settings-panel");
+    let button = document.querySelector(".settings-btn");
+
+    panel.classList.toggle("open");
+    button.classList.toggle("open");
+}
