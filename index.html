@@ -39,7 +39,29 @@
     <header>
         <nav>
             
-            
+            <button class="settings-btn" onclick="toggleSettings()">⚙</button>
+            <div class="settings-panel" id="settingsPanel">
+                <h3>Настройки</h3>
+                <button onclick="toggleTheme()">Сменить тему</button>
+                <p id="time"></p>
+                <p>Создано MIC-ael</p>
+            </div>
+
+            <script>
+                function toggleSettings() {
+                    document.getElementById('settingsPanel').classList.toggle('open');
+                }
+                function toggleTheme() {
+                    document.body.classList.toggle('light-mode');
+               
+                }
+                
+                function updateTime() {
+                    document.getElementById('time').textContent = "Время: " + new Date().toLocaleTimeString();
+                }
+                setInterval(updateTime, 1000);
+                updateTime();
+            </script>
             
             <a href="https://northcat-studio.github.io/1/" class="btn" id="home-tab">Home</a>
             <a href="https://northcat-studio.github.io/2/" class="btn" id="news-tab">News</a>
