@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.toggle("light-theme");
     }
 
-    
-
     settingsButton.addEventListener("click", toggleSettings);
 });
 
